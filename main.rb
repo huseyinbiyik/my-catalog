@@ -8,12 +8,31 @@
   "7: List all sources (e.g. 'From a friend', 'Online shop')",
   "8: Add a book",
   "9: Add a music album",
-  "10: Add a game"
+  "10: Add a game",
+  "11: Exit"
 ];
+@exit = false
+
+def get_selection(choice)
+  case choice
+  when 1
+    #call method
+  when 2
+    #call method
+  when 11
+    @exit = true
+  else 
+    puts "Wrong input!"
+  end
+end
 
 def main()
-  @options.each |item| do
-    puts item
+  while !@exit
+    @options.each |item| do
+      puts item
+    end
+    choice = gets.chomps.to_i
+    get_selection(choice)
   end
 end
 
