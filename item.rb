@@ -10,4 +10,11 @@ class Item
     @label = label
     @publish_date = publish_date
   end
+
+  def can_be_archived?
+    @archived == false
+  end
+
+  def move_to_archive
+  end
 end
