@@ -12,11 +12,12 @@ class Item
   end
 
   def can_be_archived?
-    if Time.now - @publish_date > 365 * 10
-      @archived = true
-    end
+    Time.now - @publish_date > 365 * 10
   end
 
   def move_to_archive
+    if can_be_archived?
+      @archived = true
+    end
   end
 end
