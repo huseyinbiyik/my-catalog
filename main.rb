@@ -20,6 +20,8 @@ def get_selection(choice)
   case choice
   when 1
     # call method
+  when 3
+    @app.list_games
   when 10
     @app.add_game
   when 11
