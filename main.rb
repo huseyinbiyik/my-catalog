@@ -22,6 +22,8 @@ def get_selection(choice)
     # call method
   when 2
     @app.add_game
+  when 8
+    @app.add_book
   when 11
     @exit = true
   else

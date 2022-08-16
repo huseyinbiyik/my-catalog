@@ -1,3 +1,5 @@
+require_relative 'book'
+
 class App
   attr_accessor :books, :albums, :games
 
@@ -5,6 +7,19 @@ class App
     @books = []
     @albums = []
     @games = []
+  end
+
+  def list_books
+    @books.each do |book|
+      puts "Title: #{book.title}"
+      puts "Author: #{book.author}"
+      puts "Source: #{book.source}"
+      puts "Label: #{book.label}"
+      puts "Publish date: #{book.publish_date}"
+      puts "Genre: #{book.genre}"
+      puts "Archived: #{book.archived}"
+      puts '-' * 20
+    end
   end
 
   def add_book
