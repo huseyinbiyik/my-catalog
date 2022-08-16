@@ -10,21 +10,15 @@ class App
   end
 
   def list_books
+    puts 'Listing all books from library'
     @books.each do |book|
-      puts "Title: #{book.title}"
-      puts "Author: #{book.author}"
-      puts "Source: #{book.source}"
-      puts "Label: #{book.label}"
-      puts "Publish date: #{book.publish_date}"
-      puts "Genre: #{book.genre}"
-      puts "Archived: #{book.archived}"
-      puts '-' * 20
+      puts "Book Author: '#{book.author}', Book Source: '#{book.source}', Book Publish Date: '#{book.publish_date}', Book Publisher: '#{book.publisher}'"
     end
   end
 
   def add_book
-    puts 'Enter book title:'
-    title = gets.chomp
+    puts 'Enter publisher:'
+    publisher = gets.chomp
     puts 'Enter book author:'
     author = gets.chomp
     puts 'Enter book genre:'
@@ -35,11 +29,11 @@ class App
     source = gets.chomp
     puts 'Enter publication date:'
     publish_date = gets.chomp
-    puts 'Enter publisher:'
-    publisher = gets.chomp
     puts 'Enter book cover state (good, bad):'
     cover_state = gets.chomp
-    @books << Book.new(genre, author, source, label, publish_date, publisher, cover_state)
+    book = Book.new(genre, author, source, label, publish_date, publisher, cover_state)
+    @books.push(book)
+    puts 'A book has been added successfully!✅📚'
   end
 
   def add_game

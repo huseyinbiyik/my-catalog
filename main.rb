@@ -19,7 +19,7 @@ require_relative 'app'
 def get_selection(choice)
   case choice
   when 1
-    # call method
+    @app.list_books
   when 2
     @app.add_game
   when 8
