@@ -1,8 +1,9 @@
+require 'item'
 class Game < Item
-  def initialize(genre, author, source, label, publish_date, multiplayer, last_date_at)
-    super(genre, author, source, label, publish_date)
+  def initialize(multiplayer, last_date_at, *attributes)
     @multiplayer = multiplayer
     @last_date_at = last_date_at
+    super(*attributes)
   end
 
   def can_be_archived?
