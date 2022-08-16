@@ -1,4 +1,4 @@
-require './item.rb'
+require './item'
 
 class Book < Item
   def initialize(*item, publisher, cover_state)
