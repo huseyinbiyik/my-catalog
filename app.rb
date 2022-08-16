@@ -1,3 +1,4 @@
+require_relative 'create_game'
 class App
   attr_accessor :books, :albums, :games
 
@@ -8,6 +9,6 @@ class App
   end
 
   def add_game
-    puts 'add game'
+    create_game
   end
 end

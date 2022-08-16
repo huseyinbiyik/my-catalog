@@ -20,7 +20,7 @@ def get_selection(choice)
   case choice
   when 1
     # call method
-  when 2
+  when 10
     @app.add_game
   when 11
     @exit = true
