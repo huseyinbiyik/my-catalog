@@ -1,8 +1,8 @@
 require 'item'
 class Game < Item
-  def initialize(multiplayer, last_date_at, *attributes)
+  def initialize(multiplayer, last_played_at, *attributes)
     @multiplayer = multiplayer
-    @last_date_at = last_date_at
+    @last_played_at = last_played_at
     super(*attributes)
   end
 
