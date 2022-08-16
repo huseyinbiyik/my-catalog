@@ -1,3 +1,6 @@
+require_relative 'app'
+
+@app = App.new
 @options = [
   '1: List all books',
   '2: List all music albums',
@@ -18,7 +21,7 @@ def get_selection(choice)
   when 1
     # call method
   when 2
-    # call method
+    @app.add_game
   when 11
     @exit = true
   else
