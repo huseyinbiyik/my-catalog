@@ -7,6 +7,8 @@ class Game < Item
   end
 
   def can_be_archived?
-    Time.now - @publish_date > 365 * 10
+    date = DateTime.parse(@last_played_at).to_date
+    archived = (Date.today.year - date.year) > 2
+    super && archived
   end
 end
