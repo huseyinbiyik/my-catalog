@@ -17,4 +17,10 @@ class App
       puts "Genre: #{game.genre}, Author: #{game.author}, Source: #{game.source}, Label: #{game.label}"
     end
   end
+
+  def list_authors
+    @games.each do |game|
+      puts "Author: #{game.author}"
+    end
+  end
 end
