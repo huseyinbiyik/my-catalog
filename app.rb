@@ -91,4 +91,9 @@ class App
     Game.new(game['multiplayer'], game['last_played_at'], game['genre'], game['author'], game['source'], game['label'],
              game['publish_date'])
   end
+
+  def create_book_object(book)
+    Book.new(book['genre'], book['author'], book['source'], book['label'], book['publish_date'], book['publisher'],
+             book['cover_state'])
+  end
 end
