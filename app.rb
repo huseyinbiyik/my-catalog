@@ -1,3 +1,4 @@
+require_relative 'create_book'
 require_relative 'book'
 require_relative 'create_game'
 require_relative 'game'
@@ -15,29 +16,12 @@ class App
   def list_books
     puts 'Listing all books from library'
     @books.each do |book|
-      puts "Book Author: '#{book.author}', Book Source: '#{book.source}',
-      Book Publish Date: '#{book.publish_date}', Book Publisher: '#{book.publisher}'"
+      puts "Author: '#{book.author}', Publish Date: '#{book.publish_date}', Publisher: '#{book.publisher}'"
     end
   end
 
   def add_book
-    puts 'Enter publisher:'
-    publisher = gets.chomp
-    puts 'Enter book author:'
-    author = gets.chomp
-    puts 'Enter book genre:'
-    genre = gets.chomp
-    puts 'Enter book label:'
-    label = gets.chomp
-    puts 'Enter book source:'
-    source = gets.chomp
-    puts 'Enter publication date:'
-    publish_date = gets.chomp
-    puts 'Enter book cover state (good, bad):'
-    cover_state = gets.chomp
-    book = Book.new(genre, author, source, label, publish_date, publisher, cover_state)
-    @books.push(book)
-    puts 'A book has been added successfully!✅📚'
+    create_book
   end
 
   def add_game
@@ -50,6 +34,12 @@ class App
     end
   end
 
+  def list_labels
+    @books.each do |book|
+      puts "Label: #{book.label}"
+    end
+  end
+
   def list_authors
     @games.each do |game|
       puts "Author: #{game.author}"
@@ -58,6 +48,7 @@ class App
 
   def save_files
     File.write('./data/games.json', @games.to_json)
+    File.write('./data/books.json', @books.to_json)
     puts 'The file saved successfully 👍✅'
   end
 
@@ -67,6 +58,13 @@ class App
       JSON.parse(File.read('./data/games.json')).map do |game|
         load_games(game)
       end
+      puts 'The games file has been loaded successfully!✅🎯'
+    end
+    if File.exist?('./data/books.json')
+      JSON.parse(File.read('./data/books.json')).map do |book|
+        load_books(book)
+      end
+      puts 'The books file has been loaded successfully!✅📚'
     end
   end
   # rubocop:enable Style/GuardClause
@@ -76,8 +74,18 @@ class App
     @games << game_object
   end
 
+  def load_books(book)
+    book_object = create_book_object(book)
+    @books << book_object
+  end
+
   def create_game_object(game)
     Game.new(game['multiplayer'], game['last_played_at'], game['genre'], game['author'], game['source'], game['label'],
              game['publish_date'])
+  end
+
+  def create_book_object(book)
+    Book.new(book['genre'], book['author'], book['source'], book['label'], book['publish_date'], book['publisher'],
+             book['cover_state'])
   end
 end
