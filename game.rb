@@ -23,7 +23,7 @@ class Game < Item
       'author' => @author,
       'source' => @source,
       'label' => @label,
-      'publish_data' => @publish_date
+      'publish_date' => @publish_date
     }.to_json(*args)
   end
 end

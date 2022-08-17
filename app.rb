@@ -31,6 +31,7 @@ class App
     puts 'The file saved successfully 👍✅'
   end
 
+  # rubocop:disable Style/GuardClause
   def open_files
     if File.exist?('./data/games.json')
       JSON.parse(File.read('./data/games.json')).map do |game|
@@ -38,6 +39,7 @@ class App
       end
     end
   end
+  # rubocop:enable Style/GuardClause
 
   def load_games(game)
     game_object = create_game_object(game)
