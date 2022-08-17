@@ -9,7 +9,7 @@ class Book < Item
     @publisher = publisher
     @cover_state = cover_state
   end
-  
+
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
