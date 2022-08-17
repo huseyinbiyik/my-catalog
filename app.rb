@@ -1,3 +1,4 @@
+require_relative 'create_book'
 require_relative 'book'
 require_relative 'create_game'
 require_relative 'game'
@@ -21,23 +22,7 @@ class App
   end
 
   def add_book
-    puts 'Enter publisher:'
-    publisher = gets.chomp
-    puts 'Enter book author:'
-    author = gets.chomp
-    puts 'Enter book genre:'
-    genre = gets.chomp
-    puts 'Enter book label:'
-    label = gets.chomp
-    puts 'Enter book source:'
-    source = gets.chomp
-    puts 'Enter publication date:'
-    publish_date = gets.chomp
-    puts 'Enter book cover state (good, bad):'
-    cover_state = gets.chomp
-    book = Book.new(genre, author, source, label, publish_date, publisher, cover_state)
-    @books.push(book)
-    puts 'A book has been added successfully!✅📚'
+    create_book
   end
 
   def add_game
