@@ -16,9 +16,12 @@ require_relative 'app'
 ]
 @exit = false
 
+# rubocop:disable Metrics/CyclomaticComplexity
 def get_selection(choice)
   case choice
   when 1
+    @app.list_books
+  when 2
     # call method
   when 3
     @app.list_games
@@ -26,12 +29,15 @@ def get_selection(choice)
     @app.list_authors
   when 10
     @app.add_game
+  when 8
+    @app.add_book
   when 11
     @exit = true
   else
     puts 'Wrong input!'
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity
 
 def main()
   until @exit
