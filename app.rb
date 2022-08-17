@@ -58,6 +58,7 @@ class App
 
   def save_files
     File.write('./data/games.json', @games.to_json)
+    File.write('./data/books.json', @books.to_json)
     puts 'The file saved successfully 👍✅'
   end
 
