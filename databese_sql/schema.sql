@@ -1,3 +1,7 @@
+/* Database schema to keep the structure of entire database. */
+
+CREATE DATABASE my_catalog;
+
 CREATE TABLE item (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     archived BOOLEAN NOT NULL DEFAULT FALSE,
