@@ -1,4 +1,7 @@
 class Author
+  # used for the test
+  attr_reader :first_name
+
   def initialize(first_name, last_name)
     @id = Random.rand(1..1000)
     @first_name = first_name
