@@ -69,6 +69,11 @@ class App
         load_games(game)
       end
     end
+    if File.exist?('./data/books.json')
+      JSON.parse(File.read('./data/books.json')).map do |book|
+        load_books(book)
+      end
+    end
   end
   # rubocop:enable Style/GuardClause
 
