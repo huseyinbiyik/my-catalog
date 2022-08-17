@@ -82,6 +82,11 @@ class App
     @games << game_object
   end
 
+  def load_books(book)
+    book_object = create_book_object(book)
+    @books << book_object
+  end
+
   def create_game_object(game)
     Game.new(game['multiplayer'], game['last_played_at'], game['genre'], game['author'], game['source'], game['label'],
              game['publish_date'])
