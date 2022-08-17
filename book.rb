@@ -16,15 +16,16 @@ class Book < Item
     can_be_archived? || @cover_state == 'bad'
   end
 
-  def to_json
+  def to_json(*args)
     {
-      'genre' => @genre,
+      JSON.create_id => self.class.name,
+      'publisher' => @publisher,
+      'cover_state' => @cover_state,
+      'publish_date' => @publish_date,
       'author' => @author,
       'source' => @source,
-      'label' => @label,
-      'publish_date' => @publish_date,
-      'publisher' => @publisher,
-      'cover_state' => @cover_state
-    }
+      'genre' => @genre,
+      'label' => @label
+    }.to_json(*args)
   end
 end
