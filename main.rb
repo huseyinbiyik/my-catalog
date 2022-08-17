@@ -22,15 +22,23 @@ def get_selection(choice)
   when 1
     @app.list_books
   when 2
-    # call method
+    # list_albums
   when 3
     @app.list_games
+  when 4
+    # list_genres
+  when 5
+    @app.list_labels
   when 6
     @app.list_authors
-  when 10
-    @app.add_game
+  when 7
+    # list_sources
   when 8
     @app.add_book
+  when 9
+    # add_album
+  when 10
+    @app.add_game
   when 11
     @app.save_files
     @exit = true
