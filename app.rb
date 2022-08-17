@@ -34,6 +34,11 @@ class App
     end
   end
 
+  def list_labels
+    @books.each do |book|
+      puts "Label: #{book.label}"
+    end
+
   def list_authors
     @games.each do |game|
       puts "Author: #{game.author}"
