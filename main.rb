@@ -35,6 +35,7 @@ def get_selection(choice)
 end
 
 def main()
+  @app.open_files
   until @exit
     @options.each do |item|
       puts item

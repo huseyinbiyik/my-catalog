@@ -13,4 +13,17 @@ class Game < Item
     archived = (Date.today.year - date.year) > 2
     super && archived
   end
+
+  def to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      'multiplayer' => @multiplayer,
+      'last_played_at' => @last_played_at,
+      'genre' => @genre,
+      'author' => @author,
+      'source' => @source,
+      'label' => @label,
+      'publish_data' => @publish_date
+    }.to_json(*args)
+  end
 end
