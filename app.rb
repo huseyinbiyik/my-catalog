@@ -38,6 +38,7 @@ class App
     @books.each do |book|
       puts "Label: #{book.label}"
     end
+  end
 
   def list_authors
     @games.each do |game|

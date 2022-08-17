@@ -13,7 +13,7 @@ class Book < Item
   private
 
   def can_be_archived?
-    can_be_archived? || @cover_state == 'bad'
+    super || @cover_state == 'bad'
   end
 
   def to_json(*args)
