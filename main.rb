@@ -20,7 +20,11 @@ def get_selection(choice)
   case choice
   when 1
     # call method
-  when 2
+  when 3
+    @app.list_games
+  when 6
+    @app.list_authors
+  when 10
     @app.add_game
   when 11
     @exit = true
