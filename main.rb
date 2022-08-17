@@ -32,6 +32,7 @@ def get_selection(choice)
   when 8
     @app.add_book
   when 11
+    @app.save_files
     @exit = true
   else
     puts 'Wrong input!'
@@ -40,6 +41,7 @@ end
 # rubocop:enable Metrics/CyclomaticComplexity
 
 def main()
+  @app.open_files
   until @exit
     @options.each do |item|
       puts item
