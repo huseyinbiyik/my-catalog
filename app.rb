@@ -2,6 +2,7 @@ require_relative 'book'
 require_relative 'create_game'
 require_relative 'game'
 require 'json'
+require 'date'
 
 class App
   attr_accessor :books, :albums, :games
@@ -10,6 +11,10 @@ class App
     @books = []
     @albums = []
     @games = []
+  end
+
+  def convert_date(str)
+    Date.parse(str)
   end
 
   def list_books

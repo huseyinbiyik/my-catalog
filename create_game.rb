@@ -5,8 +5,8 @@ def create_game
   print 'Is it a multiplayer game? '
   multiplayer = gets.chomp
 
-  print 'When was the last time you played? Please enter in this format: YYYY/MM/DD '
-  last_played_at = gets.chomp
+  print 'When was the last time you played? Enter date in format YYYY-MM-DD '
+  last_played_at = convert_date(gets)
 
   print 'What is the genre of the game? '
   genre = gets.chomp
@@ -20,8 +20,8 @@ def create_game
   print 'What is the label?'
   label = gets.chomp
 
-  print 'Publish date? Please enter in this format: YYYY/MM/DD'
-  publish_date = gets.chomp
+  print 'Publish date?  Enter date in format YYYY-MM-DD '
+  publish_date = convert_date(gets)
 
   game = Game.new(multiplayer, last_played_at, genre, author, source, label, publish_date)
 
