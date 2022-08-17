@@ -22,7 +22,7 @@ def get_selection(choice)
   when 1
     @app.list_books
   when 2
-    # list_albums
+    @app.list_albums
   when 3
     @app.list_games
   when 4

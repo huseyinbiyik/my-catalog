@@ -88,4 +88,10 @@ class App
     Book.new(book['genre'], book['author'], book['source'], book['label'], book['publish_date'], book['publisher'],
              book['cover_state'])
   end
+
+  def list_albums
+    @albums.each do |album|
+      puts "Author: '#{album.author}', Publish Date: '#{alubm.publish_date}', Available on spotify: '#{book.on_spotify}'"
+    end
+  end
 end
