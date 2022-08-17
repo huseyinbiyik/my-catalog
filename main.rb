@@ -43,7 +43,7 @@ def get_selection(choice)
     @app.save_files
     @exit = true
   else
-    puts 'Wrong input!'
+    puts 'Wrong input! ⚠️'
   end
 end
 # rubocop:enable Metrics/CyclomaticComplexity
