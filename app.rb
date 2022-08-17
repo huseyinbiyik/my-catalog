@@ -58,11 +58,13 @@ class App
       JSON.parse(File.read('./data/games.json')).map do |game|
         load_games(game)
       end
+      puts 'The games file has been loaded successfully!✅🎯'
     end
     if File.exist?('./data/books.json')
       JSON.parse(File.read('./data/books.json')).map do |book|
         load_books(book)
       end
+      puts 'The books file has been loaded successfully!✅📚'
     end
   end
   # rubocop:enable Style/GuardClause
