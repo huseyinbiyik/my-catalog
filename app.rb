@@ -1,4 +1,5 @@
 require_relative 'book'
+require_relative 'create_game'
 
 class App
   attr_accessor :books, :albums, :games
@@ -38,6 +39,18 @@ class App
   end
 
   def add_game
-    puts 'add game'
+    create_game
+  end
+
+  def list_games
+    @games.each do |game|
+      puts "Genre: #{game.genre}, Author: #{game.author}, Source: #{game.source}, Label: #{game.label}"
+    end
+  end
+
+  def list_authors
+    @games.each do |game|
+      puts "Author: #{game.author}"
+    end
   end
 end

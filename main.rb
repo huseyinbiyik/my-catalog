@@ -21,6 +21,12 @@ def get_selection(choice)
   when 1
     @app.list_books
   when 2
+    # call method
+  when 3
+    @app.list_games
+  when 6
+    @app.list_authors
+  when 10
     @app.add_game
   when 8
     @app.add_book
