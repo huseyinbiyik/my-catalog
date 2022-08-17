@@ -27,6 +27,7 @@ def get_selection(choice)
   when 10
     @app.add_game
   when 11
+    @app.save_files
     @exit = true
   else
     puts 'Wrong input!'

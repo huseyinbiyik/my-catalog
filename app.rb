@@ -1,4 +1,6 @@
 require_relative 'create_game'
+require_relative 'game'
+require 'json'
 class App
   attr_accessor :books, :albums, :games
 
@@ -22,5 +24,10 @@ class App
     @games.each do |game|
       puts "Author: #{game.author}"
     end
+  end
+
+  def save_files
+    File.write('./data/games.json', @games.to_json)
+    puts 'The file saved successfully 👍✅'
   end
 end
