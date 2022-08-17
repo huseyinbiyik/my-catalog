@@ -17,7 +17,7 @@ def create_book
   print 'Enter the book source:'
   source = gets.chomp
 
-  print 'Enter publication date of the book: '
+  print 'Enter publication date of the book in this format(day/month/year): '
   publish_date = gets.chomp
 
   print 'Enter the book cover state (good, bad): '
