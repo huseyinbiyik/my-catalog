@@ -16,6 +16,7 @@ require_relative 'app'
 ]
 @exit = false
 
+# rubocop:disable Metrics/CyclomaticComplexity
 def get_selection(choice)
   case choice
   when 1
@@ -36,6 +37,7 @@ def get_selection(choice)
     puts 'Wrong input!'
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity
 
 def main()
   until @exit
