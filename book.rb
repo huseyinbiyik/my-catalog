@@ -9,13 +9,7 @@ class Book < Item
     @publisher = publisher
     @cover_state = cover_state
   end
-
-  private
-
-  def can_be_archived?
-    super || @cover_state == 'bad'
-  end
-
+  
   def to_json(*args)
     {
       JSON.create_id => self.class.name,
@@ -27,5 +21,11 @@ class Book < Item
       'genre' => @genre,
       'label' => @label
     }.to_json(*args)
+  end
+
+  private
+
+  def can_be_archived?
+    super || @cover_state == 'bad'
   end
 end
