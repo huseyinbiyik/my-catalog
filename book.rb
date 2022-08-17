@@ -32,6 +32,5 @@ class Book < Item
                 else
                   false
                 end
-    
   end
 end

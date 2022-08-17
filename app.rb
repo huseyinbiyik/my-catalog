@@ -16,7 +16,9 @@ class App
   def list_books
     puts 'Listing all books from library'
     @books.each do |book|
-      puts "Author: '#{book.author}', Publish Date: '#{book.publish_date}', Publisher: '#{book.publisher}'"
+      puts "➡️ Author: '#{book.author}', Publish Date: '#{book.publish_date}', Publisher: '#{book.publisher}'
+      Genre: '#{book.genre}', Label: '#{book.label}', Source: '#{book.source}', Cover State: '#{book.cover_state}'
+      Archived: '#{book.archived}'"
     end
   end
 
