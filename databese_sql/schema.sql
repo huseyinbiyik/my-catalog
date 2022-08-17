@@ -18,3 +18,10 @@ CREATE TABLE book (
     archived BOOLEAN NOT NULL DEFAULT FALSE,
     FOREIGN KEY (author, source, label, publish_date) REFERENCES item (author, source, label, publish_date)
 );
+
+CREATE TABLE label (
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR(255) NOT NULL,
+    color VARCHAR(255) NOT NULL
+  -- an array of items  
+);
