@@ -20,9 +20,6 @@ class App
   def list_books
     puts 'Listing all books from library'
     @books.each do |book|
-<<<<<<< HEAD
-      puts "Publish Date: '#{book.publish_date}', Publisher: '#{book.publisher}'"
-=======
       puts "➡️ Publish Date: '#{book.publish_date}', Publisher: '#{book.publisher}' Cover State: '#{book.cover_state}'
       Archived: '#{book.archived}'"
     end
@@ -59,8 +56,6 @@ class App
     File.write('./data/books.json', @books.to_json)
     puts 'The file saved successfully 👍✅'
   end
-
-  # rubocop:disable Style/GuardClause
   def open_files
     if File.exist?('./data/games.json')
       JSON.parse(File.read('./data/games.json')).map do |game|
