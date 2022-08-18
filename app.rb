@@ -61,7 +61,7 @@ class App
   def open_files
     if File.exist?('./data/games.json')
       JSON.parse(File.read('./data/games.json')).map do |game|
-        # load_games(game)
+        load_games(game)
       end
       puts 'The games file has been loaded successfully!✅🎯'
     end
@@ -74,19 +74,14 @@ class App
   end
   # rubocop:enable Style/GuardClause
 
-  # def load_games(game)
-  #   game_object = create_game_object(game)
-  #   @games << game_object
-  # end
+  def load_games(game)
+    create_game(game['publish_date'], game['multiplayer'], game['last_played_at'], game['author'], game['label'],
+                game['source'], game['genre'], @data)
+  end
 
   # def load_books(book)
   #   book_object = create_book_object(book)
   #   @books << book_object
-  # end
-
-  # def create_game_object(game)
-  #   Game.new(game['multiplayer'], game['last_played_at'], game['genre'], game['author'], game['source'], game['label'],
-  #            game['publish_date'])
   # end
 
   # def create_book_object(book)

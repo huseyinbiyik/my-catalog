@@ -35,10 +35,10 @@ end
 def create_game(publish_date, multiplayer, last_played_at, *attributes)
   author, label, source, genre, data = *attributes
   game = Game.new(publish_date, multiplayer, last_played_at)
-  game.author = data.authors[author]
-  game.label = data.labels[label]
-  game.source = data.sources[source]
-  game.genre = data.genres[genre]
+  game.author = data.authors[author.to_i]
+  game.label = data.labels[label.to_i]
+  game.source = data.sources[source.to_i]
+  game.genre = data.genres[genre.to_i]
   @games.push(game)
   p @games
 end
