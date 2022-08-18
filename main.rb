@@ -34,7 +34,7 @@ def get_selection(choice)
   when 7
     # list_sources
   when 8
-    # @app.add_book
+    @app.add_book
   when 9
     @app.create_music_album
   when 10

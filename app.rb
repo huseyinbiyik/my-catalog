@@ -6,7 +6,6 @@ require_relative 'create_music_album'
 require_relative 'load_data'
 
 require 'json'
-require 'pry'
 
 class App
   attr_accessor :books, :albums, :games, :data
@@ -25,9 +24,9 @@ class App
     end
   end
 
-  # def add_book
-  #   create_book
-  # end
+  def add_book
+    create_book(@data)
+  end
 
   # def add_game
   #   create_game
