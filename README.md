@@ -8,6 +8,7 @@
 ![catalog_of_my_things](https://user-images.githubusercontent.com/25887253/185434532-272372ce-9814-4ec5-8e52-f8fdfc4fab04.png)
 
 ## Presentation Video
+- [Live Presentation](https://youtu.be/PLWeRwe9CiQ)
 
 ## Built With
 - Ruby
