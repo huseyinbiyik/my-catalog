@@ -58,29 +58,25 @@ class App
     puts 'The file saved successfully 👍✅'
   end
 
-  # rubocop:disable Style/GuardClause
   def open_files
     if File.exist?('./data/games.json')
       JSON.parse(File.read('./data/games.json')).map do |game|
         # load_games(game)
       end
       puts 'The games file has been loaded successfully!✅🎯'
+    else
+      puts 'File not found'
     end
     if File.exist?('./data/books.json')
       JSON.parse(File.read('./data/books.json')).map do |book|
         # load_books(book)
       end
       puts 'The books file has been loaded successfully!✅📚'
+    else
+      puts 'File not found'
     end
-    if File.exist?('./data/music_album.json')
-      JSON.parse(File.read('./data/music_album.json')).map do |album|
-        load_music_album(album)
-      end
-      puts 'The books file has been loaded successfully!✅📚'
-    end
+    read_album
   end
-  # rubocop:enable Style/GuardClause
-
   # def load_games(game)
   #   game_object = create_game_object(game)
   #   @games << game_object
@@ -120,5 +116,16 @@ class App
   def load_music_album(data)
     album = MusicAlbum.new(data['publish_date'], data['on_spotify'])
     @albums.push(album)
+  end
+
+  def read_album
+    if File.exist?('./data/music_album.json')
+      JSON.parse(File.read('./data/music_album.json')).map do |album|
+        load_music_album(album)
+      end
+      puts 'The books file has been loaded successfully!✅📚'
+    else
+      puts 'File not found'
+    end
   end
 end
