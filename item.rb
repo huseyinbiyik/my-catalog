@@ -1,3 +1,5 @@
+require 'date'
+
 class Item
   attr_reader :archived, :author, :genre, :label, :source, :publish_date
 
@@ -8,7 +10,7 @@ class Item
   end
 
   def can_be_archived?
-    Time.now - @publish_date > 365 * 10
+    (Date.today - Date.parse(@publish_date)).to_i > 365 * 10
   end
 
   def move_to_archive

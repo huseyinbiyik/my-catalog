@@ -7,6 +7,7 @@ class Book < Item
     super(publish_date)
     @publisher = publisher
     @cover_state = cover_state
+    @archived = can_be_archived?
   end
 
   def to_json(*args)
@@ -25,6 +26,10 @@ class Book < Item
   private
 
   def can_be_archived?
-    super || @cover_state == 'bad'
+    @archived = if super || @cover_state == 'bad'
+                  true
+                else
+                  false
+                end
   end
 end

@@ -24,7 +24,7 @@ def create_book(data)
   label = gets.chomp.to_i
   print 'Enter the book publisher: '
   publisher = gets.chomp
-  print 'Enter publication date of the book: '
+  print 'Enter publication date of the book in this format(day/month/year): '
   publish_date = gets.chomp
   print 'Enter the book cover state (good, bad): '
   cover_state = gets.chomp
