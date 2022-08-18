@@ -1,6 +1,6 @@
 class Genre
   attr_reader :items, :id, :name
-  
+
   def initialize(name)
     @id = Random.rand(1..1000)
     @name = name
@@ -11,5 +11,4 @@ class Genre
     @items.push(item)
     item.genre = self
   end
-  
 end

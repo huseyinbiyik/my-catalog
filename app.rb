@@ -3,7 +3,11 @@ require_relative 'book'
 require_relative 'create_game'
 require_relative 'game'
 require_relative 'create_music_album'
+require_relative 'load_data'
+
 require 'json'
+
+@data = LoadData.new
 
 class App
   attr_accessor :books, :albums, :games
@@ -97,8 +101,8 @@ class App
   end
 
   def list_genres
-    $genres.each do |genre|
-      puts "'#{genre.name}', "
+    @data.genres.each do |genre|
+      puts "'#{genre.name}' "
     end
   end
 

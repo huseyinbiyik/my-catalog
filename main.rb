@@ -1,7 +1,5 @@
 require_relative 'app'
-require_relative 'load_data'
 
-load_data
 @app = App.new
 @options = [
   '1: List all books',
