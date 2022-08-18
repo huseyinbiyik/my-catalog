@@ -58,16 +58,14 @@ class App
   end
 
   def open_files
-    if File.exist?('./data/games.json')
-      JSON.parse(File.read('./data/games.json')).map do |game|
-        # load_games(game)
-      end
+    return unless File.exist?('./data/games.json')
+    JSON.parse(File.read('./data/games.json')).map do |_game|
+      # load_games(game)
       puts 'The games file has been loaded successfully!✅🎯'
     end
-    if File.exist?('./data/books.json')
-      JSON.parse(File.read('./data/books.json')).map do |book|
-        load_books(book)
-      end
+    return unless File.exist?('./data/books.json')
+    JSON.parse(File.read('./data/books.json')).map do |book|
+      load_books(book)
       puts 'The books file has been loaded successfully!✅📚'
     end
   end
