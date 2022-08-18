@@ -56,6 +56,7 @@ class App
     File.write('./data/books.json', @books.to_json)
     puts 'The file saved successfully 👍✅'
   end
+
   def open_files
     if File.exist?('./data/games.json')
       JSON.parse(File.read('./data/games.json')).map do |game|
