@@ -20,7 +20,7 @@ class App
   def list_books
     puts 'Listing all books from library'
     @books.each do |book|
-      puts "Author: '#{book.author}', Publish Date: '#{book.publish_date}', Publisher: '#{book.publisher}'"
+      puts "Publish Date: '#{book.publish_date}', Publisher: '#{book.publisher}'"
     end
   end
 
@@ -66,7 +66,7 @@ class App
     end
     if File.exist?('./data/books.json')
       JSON.parse(File.read('./data/books.json')).map do |book|
-        # load_books(book)
+        load_books(book)
       end
       puts 'The books file has been loaded successfully!✅📚'
     end
@@ -78,20 +78,19 @@ class App
   #   @games << game_object
   # end
 
-  # def load_books(book)
-  #   book_object = create_book_object(book)
-  #   @books << book_object
-  # end
+  def load_books(book)
+    book_object = create_book_object(book)
+    @books << book_object
+  end
 
   # def create_game_object(game)
   #   Game.new(game['multiplayer'], game['last_played_at'], game['genre'], game['author'], game['source'], game['label'],
   #            game['publish_date'])
   # end
 
-  # def create_book_object(book)
-  #   Book.new(book['genre'], book['author'], book['source'], book['label'], book['publish_date'], book['publisher'],
-  #            book['cover_state'])
-  # end
+  def create_book_object(book)
+    Book.new(book['publish_date'], book['publisher'], book['cover_state'])
+  end
 
   def list_albums
     @albums.each do |album|
