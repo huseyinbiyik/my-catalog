@@ -2,7 +2,7 @@ require './item'
 
 describe Item do
   before :each do
-    @item = Item.new('2020/12/22')
+    @item = Item.new('2022/12/22')
   end
 
   describe '#new' do
@@ -23,6 +23,12 @@ describe Item do
   describe 'can_be_archived?' do
     it 'returns false if it older than 10 years' do
       expect(@item.can_be_archived?).to eq false
+    end
+  end
+
+  describe 'move_to_archive' do
+    it 'returns false if can_be_archived? returns false' do
+      expect(@item.archived).to eq false
     end
   end
 end
