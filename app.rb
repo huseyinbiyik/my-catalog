@@ -29,9 +29,9 @@ class App
   #   create_book
   # end
 
-  # def add_game
-  #   create_game
-  # end
+  def add_game
+    create_game(@data)
+  end
 
   def list_games
     @games.each do |game|
