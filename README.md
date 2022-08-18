@@ -1,45 +1,50 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# School Library
+# My Catalog
 
-> School Library is a command line application built with Ruby 3 to stimulate a school library application with interactive cli.This app records what books are in the library and who borrows them. The app allow you to: - Add new students or teachers. - Add new books. - Save records of who borrowed a given book and when.
+> My Catalog is a CLI software which you can add Games, Books, Movies and Music Albums. It was built with Ruby.
 
+## Presentation Video
 
 ## Built With
-
 - Ruby
 - Linter: Rubocop
-- Design pattern
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-- Make sure you have Ruby 3 or higher and a text editer. 
+- Make sure you have Ruby 3 or higher and a text editer.
 
 ### Setup
-- git clone https://github.com/HSMathebula/OOP-School-Library.git
-- cd to OOP-School-Library
+- git clone https://github.com/huseyinbiyik/my-catalog.git
+- cd to my-catalog
 
 ### Install
 - run bundle install
 
 ### Run tests
-- $ ruby <FileName.rb>
+- rspec spec
 
 ## Author
 
-👤 **Happen S Mathebula**
+👤 **Huseyin Biyik**
 
-- GitHub: [@HSMathebula](https://hsmathebula.github.io/Happen_S_Mathebula/)
-- Twitter: [@HappenSipho](https://twitter.com/HappenSipho)
-- LinkedIn: [happen-sipho-mathebula](www.linkedin.com/in/happen-sipho-mathebula)
+- GitHub: [@huseyinbiyik](https://github.com/huseyinbiyik)
+- Twitter: [@huseyin__biyik](https://twitter.com/huseyin__biyik)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/huseyin-b%C4%B1y%C4%B1k/)
 
-👤 **Felix Odete**
+👤 **Ahmad Zamir Yousufi**
+- GitHub: [@ahzamir](https://github.com/ahzamir).
+- Twitter: [@YousufiZamir](https://twitter.com/YousufiZamir)
+- LinkedIn: [ahmad-zamir-yousufi](https://www.linkedin.com/in/ahzamir/)
 
-- GitHub: [@felixodette](https://hsmathebula.github.io/felixodette/)
-- Twitter: [@Odette3000](https://twitter.com/Odette3000)
-- LinkedIn: [Felix Odete](www.linkedin.com/in/felixodete)
+👤 **Haji Bamsi**
+
+- GitHub: [@Bamsi](https://github.com/bamsi)
+- Twitter: [@Bamsi](https://twitter.com/bamsi)
+- LinkedIn: [@bamsi](https://linkedin.com/in/bamsi)
+
 
 ## 🤝 Contributing
 
