@@ -88,7 +88,7 @@ class App
     end
     read_album
   end
-  
+
   def load_games(game)
     game_object = create_game_object(game)
     @games << game_object
