@@ -26,7 +26,7 @@ def game_options(data)
   publish_date = gets.chomp
   puts 'Is this game multiplayer?'
   multiplayer = gets.chomp
-  puts 'What is the last played date?'
+  puts 'What is the last played date Please enter in this format: YYYY/MM/DD?'
   last_played_at = gets.chomp
 
   create_game(publish_date, multiplayer, last_played_at, author, label, source, genre, data)
