@@ -4,6 +4,9 @@
 
 > My Catalog is a CLI software which you can add Games, Books, Movies and Music Albums. It was built with Ruby.
 
+# Schema
+![catalog_of_my_things](https://user-images.githubusercontent.com/25887253/185434532-272372ce-9814-4ec5-8e52-f8fdfc4fab04.png)
+
 ## Presentation Video
 
 ## Built With
