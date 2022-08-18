@@ -29,13 +29,13 @@ class App
     create_book(@data)
   end
 
-  # def add_game
-  #   create_game
-  # end
+  def add_game
+    game_options(@data)
+  end
 
   def list_games
     @games.each do |game|
-      puts "Genre: #{game.genre}, Author: #{game.author}, Source: #{game.source}, Label: #{game.label}"
+      puts "Publish Date: #{game.publish_date}, Multiplayer: #{game.multiplayer}, Last Played: #{game.last_played_at}"
     end
   end
 
@@ -69,8 +69,8 @@ class App
 
   def open_files
     if File.exist?('./data/games.json')
-      JSON.parse(File.read('./data/games.json')).map do |_game|
-        # load_games(game)
+      JSON.parse(File.read('./data/games.json')).map do |game|
+        load_games(game)
       end
       puts 'The games file has been loaded successfully!✅🎯'
     else
@@ -87,20 +87,19 @@ class App
     end
   end
 
-  # def load_games(game)
-  #   game_object = create_game_object(game)
-  #   @games << game_object
-  # end
+  def load_games(game)
+    game_object = create_game_object(game)
+    @games << game_object
+  end
 
   def load_books(book)
     book_object = create_book_object(book)
     @books << book_object
   end
 
-  # def create_game_object(game)
-  #   Game.new(game['multiplayer'], game['last_played_at'], game['genre'], game['author'], game['source'], game['label'],
-  #            game['publish_date'])
-  # end
+  def create_game_object(game)
+    Game.new(game['publish_date'], game['multiplayer'], game['last_played_at'])
+  end
 
   def create_book_object(book)
     Book.new(book['publish_date'], book['publisher'], book['cover_state'])
