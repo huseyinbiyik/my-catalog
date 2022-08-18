@@ -24,7 +24,7 @@ class App
     end
   end
 
-  def add_book
+  def add_books
     create_book(@data)
   end
 
