@@ -1,5 +1,7 @@
 require_relative 'app'
+require_relative 'load_data'
 
+load_data
 @app = App.new
 @options = [
   '1: List all books',
@@ -26,7 +28,7 @@ def get_selection(choice)
   when 3
     @app.list_games
   when 4
-    # list_genres
+    @app.list_genres
   when 5
     @app.list_labels
   when 6
@@ -34,11 +36,11 @@ def get_selection(choice)
   when 7
     # list_sources
   when 8
-    @app.add_book
+    # @app.add_book
   when 9
-    # add_album
+    @app.create_music_album
   when 10
-    @app.add_game
+    # @app.add_game
   when 11
     @app.save_files
     @exit = true
