@@ -86,7 +86,6 @@ class App
       puts 'The books file does not exist!🤔'
     end
   end
-  # rubocop:enable Style/GuardClause
 
   # def load_games(game)
   #   game_object = create_game_object(game)
