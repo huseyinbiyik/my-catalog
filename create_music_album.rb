@@ -1,5 +1,6 @@
 require_relative 'music_album'
 require_relative 'app'
+require 'pry'
 
 def music_album_options(data)
   puts 'Select author from the following list by index: '

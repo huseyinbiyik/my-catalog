@@ -64,6 +64,7 @@ class App
   def save_files
     File.write('./data/games.json', @games.to_json)
     File.write('./data/books.json', @books.to_json)
+    File.write('./data/music_album.json', @albums.to_json)
     puts 'The file saved successfully 👍✅'
   end
 
@@ -85,6 +86,7 @@ class App
     else
       puts 'The books file does not exist!🤔'
     end
+    read_album
   end
 
   def load_games(game)
@@ -107,7 +109,7 @@ class App
 
   def list_albums
     @albums.each do |album|
-      puts "Author: '#{album.author}', Publish Date: '#{alubm.publish_date}', Available on spotify: '#{book.on_spotify}'"
+      puts "Author: '#{album.author}', Publish Date: '#{album.publish_date}', Available on spotify: '#{album.on_spotify}'"
     end
   end
 
@@ -119,5 +121,21 @@ class App
 
   def create_music_album
     music_album_options(@data)
+  end
+
+  def load_music_album(data)
+    album = MusicAlbum.new(data['publish_date'], data['on_spotify'])
+    @albums.push(album)
+  end
+
+  def read_album
+    if File.exist?('./data/music_album.json')
+      JSON.parse(File.read('./data/music_album.json')).map do |album|
+        load_music_album(album)
+      end
+      puts 'The books file has been loaded successfully!✅📚'
+    else
+      puts 'File not found'
+    end
   end
 end
