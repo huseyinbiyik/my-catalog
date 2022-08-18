@@ -33,12 +33,14 @@ def get_selection(choice)
     @app.list_authors
   when 7
     # list_sources
+    puts 'list sources'
   when 8
     @app.add_books
   when 9
     @app.create_music_album
   when 10
     # @app.add_game
+    puts 'add game'
   when 11
     @app.save_files
     @exit = true
