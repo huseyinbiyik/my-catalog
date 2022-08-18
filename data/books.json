@@ -1,1 +1,1 @@
-[{"json_class":"Book","publisher":"ahmad","cover_state":"bad","publish_date":"12/12/2022","author":null,"source":null,"genre":null,"label":null}]
+[{"json_class":"Book","publisher":"ahmad","cover_state":"bad","publish_date":"12/12/2022","author":null,"source":null,"genre":null,"label":null},{"json_class":"Book","publisher":"ahmad","cover_state":"bad","publish_date":"11/12/2022","author":null,"source":null,"genre":null,"label":null},{"json_class":"Book","publisher":"Ahmad","cover_state":"good","publish_date":"12/12/2022","author":null,"source":null,"genre":null,"label":null}]

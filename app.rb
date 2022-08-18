@@ -109,7 +109,7 @@ class App
 
   def list_albums
     @albums.each do |album|
-      puts "Author: '#{album.author}', Publish Date: '#{album.publish_date}', Available on spotify: '#{album.on_spotify}'"
+      puts "➡️ Publish Date: '#{album.publish_date}', Available on spotify: '#{album.on_spotify}'"
     end
   end
 
@@ -133,7 +133,7 @@ class App
       JSON.parse(File.read('./data/music_album.json')).map do |album|
         load_music_album(album)
       end
-      puts 'The books file has been loaded successfully!✅📚'
+      puts 'The music_albums file has been loaded successfully!✅📚'
     else
       puts 'File not found'
     end
