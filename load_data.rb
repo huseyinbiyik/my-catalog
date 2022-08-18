@@ -8,12 +8,12 @@ class LoadData
 
   def initialize
     # add sample genre
-    @genres = @genres.count.zero? ? [Genre.new('Comedy'), Genre.new('Thriller')] : @genres
+    @genres = [Genre.new('Comedy'), Genre.new('Thriller')] if @genres.nil?
     # add sample author
-    @authors = @authors.count.zero? ? [Author.new('Adam', 'Lincoln'), Author.new('John', 'Doe')] : @authors
+    @authors = [Author.new('Adam', 'Lincoln'), Author.new('John', 'Doe')] if @authors.nil?
     # add source
-    @sources = @sources.count.zero? ? [Source.new('From a friend'), Source.new('Online shop')] : @sources
+    @sources = [Source.new('From a friend'), Source.new('Online shop')] if @sources.nil?
     # add label
-    @labels = @labels.count.zero? ? [Label.new('Gift', 'blue'), Label.new('New', 'Yellow')] : @labels
+    @labels = [Label.new('Gift', 'blue'), Label.new('New', 'Yellow')] if @labels.nil?
   end
 end

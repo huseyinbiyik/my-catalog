@@ -6,16 +6,16 @@ require_relative 'create_music_album'
 require_relative 'load_data'
 
 require 'json'
-
-@data = LoadData.new
+require 'pry'
 
 class App
-  attr_accessor :books, :albums, :games
+  attr_accessor :books, :albums, :games, :data
 
   def initialize
     @books = []
     @albums = []
     @games = []
+    @data = LoadData.new
   end
 
   def list_books
@@ -107,6 +107,6 @@ class App
   end
 
   def create_music_album
-    music_album_options
+    music_album_options(@data)
   end
 end
