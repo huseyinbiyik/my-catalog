@@ -30,7 +30,7 @@ class App
   # end
 
   def add_game
-    create_game(@data)
+    game_options(@data)
   end
 
   def list_games

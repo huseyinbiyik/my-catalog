@@ -1,7 +1,7 @@
 require_relative 'app'
 require_relative 'game'
 
-def create_game(_data)
+def game_options(data)
   puts 'Select author from the following list by index: '
   data.authors.each_with_index do |item, index|
     puts "[#{index}]: Name: #{item.first_name} #{item.last_name}"
@@ -29,8 +29,15 @@ def create_game(_data)
   puts 'What is the last played date?'
   last_played_at = gets.chomp
 
-  game = Game.new(multiplayer, last_played_at, genre, author, source, label, publish_date)
+  create_game(publish_date, multiplayer, last_played_at, genre, author, label, source, genre, data)
+end
 
+def create_game(publish_date, multiplayer, last_played_at, *attributes)
+  author, label, source, genre, data = *attributes
+  game = Game.new(publish_date, multiplayer, last_played_at)
+  game.author = data.authors[author]
+  game.label = data.labels[label]
+  game.source = data.sources[source]
+  game.genre = data.genres[genre]
   @games.push(game)
-  p @games
 end
