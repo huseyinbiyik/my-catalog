@@ -40,5 +40,4 @@ def create_game(publish_date, multiplayer, last_played_at, *attributes)
   game.source = data.sources[source.to_i]
   game.genre = data.genres[genre.to_i]
   @games.push(game)
-  p @games
 end
