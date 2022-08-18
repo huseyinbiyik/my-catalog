@@ -29,7 +29,7 @@ def game_options(data)
   puts 'What is the last played date?'
   last_played_at = gets.chomp
 
-  create_game(publish_date, multiplayer, last_played_at, genre, author, label, source, genre, data)
+  create_game(publish_date, multiplayer, last_played_at, author, label, source, genre, data)
 end
 
 def create_game(publish_date, multiplayer, last_played_at, *attributes)
@@ -40,4 +40,5 @@ def create_game(publish_date, multiplayer, last_played_at, *attributes)
   game.source = data.sources[source]
   game.genre = data.genres[genre]
   @games.push(game)
+  p @games
 end

@@ -38,7 +38,7 @@ def get_selection(choice)
   when 9
     @app.create_music_album
   when 10
-    # @app.add_game
+    @app.add_game
   when 11
     @app.save_files
     @exit = true
