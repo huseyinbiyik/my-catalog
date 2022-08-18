@@ -20,7 +20,11 @@ class App
   def list_books
     puts 'Listing all books from library'
     @books.each do |book|
+<<<<<<< HEAD
       puts "Publish Date: '#{book.publish_date}', Publisher: '#{book.publisher}'"
+=======
+      puts "➡️ Publish Date: '#{book.publish_date}', Publisher: '#{book.publisher}' Cover State: '#{book.cover_state}'
+      Archived: '#{book.archived}'"
     end
   end
 
