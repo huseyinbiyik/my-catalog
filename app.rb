@@ -40,14 +40,24 @@ class App
   end
 
   def list_labels
-    @books.each do |book|
-      puts "Label: #{book.label}"
+    puts 'Listing all labels from library'
+    @data.labels.each do |label|
+      puts "Label: #{label.title}, Color: #{label.color}"
     end
   end
 
   def list_authors
-    @games.each do |game|
-      puts "Author: #{game.author}"
+    puts 'Listing all authors from library'
+    @data.authors.each do |author|
+      puts "Author: #{author.first_name}"
+      puts "Author: #{author.last_name}"
+    end
+  end
+
+  def list_sources
+    puts 'Listing all sources from library'
+    @data.sources.each do |source|
+      puts "Source: #{source.name}"
     end
   end
 
@@ -58,16 +68,22 @@ class App
   end
 
   def open_files
-    return unless File.exist?('./data/games.json')
-    JSON.parse(File.read('./data/games.json')).map do |_game|
-      # load_games(game)
+    if File.exist?('./data/games.json')
+      JSON.parse(File.read('./data/games.json')).map do |_game|
+        # load_games(game)
+      end
       puts 'The games file has been loaded successfully!✅🎯'
+    else
+      puts 'The games file does not exist!🤔'
     end
 
-    return unless File.exist?('./data/books.json')
-    JSON.parse(File.read('./data/books.json')).map do |book|
-      load_books(book)
+    if File.exist?('./data/books.json')
+      JSON.parse(File.read('./data/books.json')).map do |book|
+        load_books(book)
+      end
       puts 'The books file has been loaded successfully!✅📚'
+    else
+      puts 'The books file does not exist!🤔'
     end
   end
   # rubocop:enable Style/GuardClause

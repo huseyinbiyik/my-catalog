@@ -32,8 +32,7 @@ def get_selection(choice)
   when 6
     @app.list_authors
   when 7
-    # list_sources
-    puts 'list sources'
+    @app.list_sources
   when 8
     @app.add_books
   when 9
